@@ -12,3 +12,5 @@
 .*.lb
 *.dvi
 *.xdv
+*.swp
+output/
