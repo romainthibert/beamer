@@ -1,0 +1,18 @@
+\usepackage{calc}
+\mode<presentation>
+%Lengths
+\newlength{\footlineht}
+\setlength{\footlineht}{5mm}
+\newlength{\footlinedp}
+\setlength{\footlinedp}{2.5mm}
+
+%Footline
+\defbeamertemplate*{footline}{lurpa}
+{
+    \begin{beamercolorbox}[dp=\footlinedp,ht=\footlineht]{footline}
+        \hfill%
+        \makebox[140pt]{\insertdate}%
+    \end{beamercolorbox}
+}
+
+\mode<all>
