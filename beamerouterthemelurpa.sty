@@ -10,9 +10,21 @@
 \defbeamertemplate*{footline}{lurpa}
 {
     \begin{beamercolorbox}[dp=\footlinedp,ht=\footlineht]{footline}
-        \hfill%
-        \makebox[140pt]{\insertdate}%
+        \hfill %
+        \makebox{\insertdate} %
+        %\hfill %
+        \makebox[25pt]{\insertframenumber/\inserttotalframenumber}
     \end{beamercolorbox}
+}
+
+%Disable the navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+%Set Background
+\setbeamertemplate{background}{
+    \begin{tikzpicture}
+        
+    \end{tikzpicture}
 }
 
 \mode<all>
