@@ -9,12 +9,9 @@
 %Footline
 \defbeamertemplate*{footline}{lurpa}
 {
-    \begin{beamercolorbox}[dp=\footlinedp,ht=\footlineht]{footline}
-        \hfill %
-        \makebox{\insertdate} %
-        %\hfill %
-        \makebox[25pt]{\insertframenumber/\inserttotalframenumber}
-    \end{beamercolorbox}
+    \hfill
+    \makebox{\insertdate} 
+    \makebox[25pt]{\insertframenumber/\inserttotalframenumber}
 }
 
 %Disable the navigation symbols
@@ -23,8 +20,12 @@
 %Set Background
 \setbeamertemplate{background}{
     \begin{tikzpicture}
-        
+        \fill[white] (0,0) rectangle (\the\paperwidth,\the\paperheight);
+        \node[inner sep=0pt] (logo_lurpa) at (2,8) {\includegraphics[height=1.5cm]{./images/lurpa.png}};
+        \node[inner sep=0pt] (logo_ens) at (13.3,8) {\includegraphics[height=2.5cm]{./images/ens.jpg}};
+        \node[inner sep=0pt] (logo_petit) at (1,1) {\includegraphics[height=0.5cm]{./images/lurpa.png}};      
     \end{tikzpicture}
 }
 
 \mode<all>
+
