@@ -5,13 +5,17 @@
 \setlength{\footlineht}{5mm}
 \newlength{\footlinedp}
 \setlength{\footlinedp}{2.5mm}
+\newlength{\footlinewd}
+\setlength{\footlinewd}{\paperwidth}
 
 %Footline
 \defbeamertemplate*{footline}{lurpa}
 {
+\begin{beamercolorbox}[wd=\footlinewd,ht=\footlineht,dp=\footlinedp]{footline}
     \hfill
     \makebox{\insertdate} 
     \makebox[25pt]{\insertframenumber/\inserttotalframenumber}
+\end{beamercolorbox}
 }
 
 %Disable the navigation symbols
@@ -20,14 +24,14 @@
 %Set Background
 \setbeamertemplate{background}{
     \begin{tikzpicture}
-        \fill[white] (0,0) rectangle (\the\paperwidth,\the\paperheight);
+        \fill[white] (0,0) rectangle (\paperwidth,\paperheight);
     \ifnum\thepage=1 
         \node[inner sep=0pt] (logo_lurpa) at (2,8) {\includegraphics[height=1.5cm]{./images/lurpa.png}};
         \node[inner sep=0pt] (logo_ens) at (13.3,8) {\includegraphics[height=2.5cm]{./images/ens.jpg}};
-    \else
-    
-    \fi
         \node[inner sep=0pt] (logo_petit) at (0.7,0.75) {\includegraphics[height=0.5cm]{./images/lurpa.png}};      
+    \else
+        \node[inner sep=0pt] (logo_petit) at (0.7,0.75) {\includegraphics[height=0.5cm]{./images/lurpa.png}};      
+    \fi
     \end{tikzpicture}
 }
 
