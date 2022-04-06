@@ -34,7 +34,12 @@
 \setbeamertemplate{itemize subitem}{\rule{1ex}{1ex}}
 \setbeamertemplate{itemize subsubitem}{\bf -}
 
-
+\defbeamertemplate*{frametitle}{}{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1.5ex]{frametitle}
+        \hspace{1em}
+        \makebox{\insertframetitle}
+    \end{beamercolorbox}
+}
 
 
 \mode<all>
