@@ -16,6 +16,12 @@
     \end{beamercolorbox}
 }
 
+%Table of Content
+\setbeamertemplate{section in toc}{%
+    {\color{slideprimary}\inserttocsectionnumber.}~\inserttocsection}
+\setbeamertemplate{subsection in toc}{%
+    \hspace{2em}{\color{slideprimary}\rule{1ex}{1ex}}~\inserttocsubsection\par}
+
 % Creating recap slides with a ToC at the beginning of each section
 \AtBeginSection[]{
 \begin{frame}{Outline}
@@ -27,6 +33,8 @@
 \setbeamertemplate{itemize item}{\scriptsize $\square$}
 \setbeamertemplate{itemize subitem}{\rule{1ex}{1ex}}
 \setbeamertemplate{itemize subsubitem}{\bf -}
+
+
 
 
 \mode<all>
