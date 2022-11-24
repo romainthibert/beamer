@@ -1,7 +1,7 @@
 \mode<presentation>
 
-\defbeamertemplate*{title page}{}
-{
+\setbeamertemplate{titlepage}{%
+{\begin{frame}[special]
     \vspace{44pt}
     \begin{beamercolorbox}{title}
         \usebeamerfont{title}\inserttitle
@@ -14,7 +14,8 @@
     \begin{beamercolorbox}{subtitle}
         \usebeamerfont{subtitle}\insertsubtitle
     \end{beamercolorbox}
-}
+\end{frame}
+}}
 
 %Table of Content
 \setbeamertemplate{section in toc}{%
@@ -24,7 +25,7 @@
 
 % Creating recap slides with a ToC at the beginning of each section
 \AtBeginSection[]{
-\begin{frame}{Outline}
+\begin{frame}{Sommaire}
 \tableofcontents[currentsection]
 \end{frame}
 }
@@ -41,5 +42,39 @@
     \end{beamercolorbox}
 }
 
+% Closing Slide
+\setbeamertemplate{endpage}{%
+{\begin{frame}[special]
+    \vspace{44pt}
+    \begin{beamercolorbox}{title}
+        \usebeamerfont{title}\inserttitle
+    \end{beamercolorbox}
+    \vspace{2pt}
+    \begin{beamercolorbox}{author}
+        \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \vspace{22pt}
+    \begin{beamercolorbox}{subtitle}
+        \centering\usebeamerfont{subtitle}\Large{Merci pour votre attention.}
+    \end{beamercolorbox}
+\end{frame}
+}}
+
+\setbeamertemplate{endpage_en}{%
+{\begin{frame}[special]
+    \vspace{44pt}
+    \begin{beamercolorbox}{title}
+        \usebeamerfont{title}\inserttitle
+    \end{beamercolorbox}
+    \vspace{2pt}
+    \begin{beamercolorbox}{author}
+        \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \vspace{22pt}
+    \begin{beamercolorbox}{subtitle}
+        \centering\usebeamerfont{subtitle}\Large{Thank you for your attention !}
+    \end{beamercolorbox}
+\end{frame}
+}}
 
 \mode<all>

@@ -1,5 +1,7 @@
 \usepackage{calc}
 \mode<presentation>
+\makeatletter
+\def\beamer@againname{}%
 %Lengths
 \newlength{\footlineht}
 \setlength{\footlineht}{5mm}
@@ -7,33 +9,52 @@
 \setlength{\footlinedp}{2.5mm}
 \newlength{\footlinewd}
 \setlength{\footlinewd}{\paperwidth}
+\newcommand{\closing}{closing}
 
 %Footline
 \defbeamertemplate*{footline}{lurpa}
 {
 \begin{beamercolorbox}[wd=\footlinewd,ht=\footlineht,dp=\footlinedp]{footline}
     \hfill
+    \ifnum\thepage=1
+    \makebox{\insertdate}
+    \makebox[25pt]{}
+    \else
     \makebox{\insertdate} 
     \makebox[25pt]{\insertframenumber}
+    \fi
 \end{beamercolorbox}
 }
 
 %Disable the navigation symbols
 \setbeamertemplate{navigation symbols}{}
 
+
 %Set Background
+
+\makeatletter
+% \define@key{beamerframe}{special}[false]{%
 \setbeamertemplate{background}{
     \begin{tikzpicture}
         \fill[white] (0,0) rectangle (\paperwidth,\paperheight);
-    \ifnum\thepage=1 
-        \node[inner sep=0pt] (logo_lurpa) at (2,8) {\includegraphics[height=1.5cm]{./images/lurpa.png}};
-        \node[inner sep=0pt] (logo_ens) at (13.3,8) {\includegraphics[height=2.5cm]{./images/ens.jpg}};
-        \node[inner sep=0pt] (logo_small) at (0.7,0.6) {\includegraphics[height=0.5cm]{./images/lurpa.png}};      
-    \else
-        \node[inner sep=0pt] (logo_small) at (0.7,0.35) {\includegraphics[height=0.5cm]{./images/lurpa.png}};      
-    \fi
+        \node[inner sep=0pt] (logo_small) at (0.7,0.35) {\includegraphics[height=0.5cm]{./images/logo_lurpa_petit_format.pdf}};
     \end{tikzpicture}
 }
+% }
+
+
+\define@key{beamerframe}{special}[true]{%
+\setbeamertemplate{background}{
+    \begin{tikzpicture}
+        \fill[white] (0,0) rectangle (\paperwidth,\paperheight);
+        \node[inner sep=0pt] (logo_lurpa) at (2,8) {\includegraphics[height=1.5cm]{./images/logo_lurpa.pdf}};
+        \node[inner sep=0pt] (logo_ens) at (13.3,8) {\includegraphics[height=2.5cm]{./images/ens.jpg}};
+        \node[inner sep=0pt] (logo_small) at (0.7,0.6) {\includegraphics[height=0.5cm]{./images/logo_lurpa_petit_format.pdf}};
+    \end{tikzpicture}
+}
+}
+\makeatother
+
 
 \mode<all>
 
