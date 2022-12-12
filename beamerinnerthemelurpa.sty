@@ -35,11 +35,19 @@
 \setbeamertemplate{itemize subitem}{\rule{1ex}{1ex}}
 \setbeamertemplate{itemize subsubitem}{\bf -}
 
+% Title on top of pages
 \defbeamertemplate*{frametitle}{}{%
-    \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1.5ex]{frametitle}
-        \hspace{1em}
-        \makebox{\insertframetitle}
-    \end{beamercolorbox}
+    \leavevmode%
+    \begin{beamercolorbox}[wd=\paperwidth]{}
+        \begin{beamercolorbox}[wd=9mm,ht=3ex,dp=1.5ex]{beforetitle}
+        \end{beamercolorbox}%
+        \hfill%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1.5ex]{frametitle}
+            \hspace{1em}
+            \makebox{\insertframetitle}
+        \end{beamercolorbox}%
+    \end{beamercolorbox}%
+    \vskip0pt%
 }
 
 % Closing Slide
