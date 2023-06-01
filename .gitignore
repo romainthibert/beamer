@@ -18,4 +18,6 @@
 *.xdv
 *.swp
 *.sh
+*.bbl
+*.blg
 output/
