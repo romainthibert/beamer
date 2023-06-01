@@ -1,3 +1,6 @@
+\newcommand\summarytitle[1]{\renewcommand\@summarytitle{#1}}
+\newcommand\@summarytitle{}
+
 \mode<presentation>
 
 \setbeamertemplate{titlepage}{%
@@ -19,14 +22,24 @@
 
 %Table of Content
 \setbeamertemplate{section in toc}{%
-    {\color{slideprimary}\inserttocsectionnumber.}~\inserttocsection}
+    {\color{slideprimary}\hspace{2em}\inserttocsectionnumber.}~\inserttocsection}
 \setbeamertemplate{subsection in toc}{%
-    \hspace{2em}{\color{slideprimary}\rule{1ex}{1ex}}~\inserttocsubsection\par}
+    \hspace{4em}{\color{slideprimary}\rule{1ex}{1ex}}~\inserttocsubsection\par}
 
 % Creating recap slides with a ToC at the beginning of each section
 \AtBeginSection[]{
-\begin{frame}{Sommaire}
-\tableofcontents[currentsection]
+\begin{frame}{\@summarytitle}
+\begin{columns}
+\begin{column}{0.4\textwidth}
+\tableofcontents[currentsection,hideallsubsections]
+\end{column}
+\begin{column}{0.6\textwidth}
+\setbeamertemplate{section in toc}{}
+\tableofcontents[currentsection,sectionstyle=show/hide,hideothersubsections]
+\setbeamertemplate{section in toc}{%
+    {\color{slideprimary}\hspace{2em}\inserttocsectionnumber.}~\inserttocsection}
+\end{column}
+\end{columns}
 \end{frame}
 }
 
@@ -79,6 +92,10 @@
         \usebeamerfont{author}\insertauthor
     \end{beamercolorbox}
     \vspace{22pt}
+    \begin{beamercolorbox}{subtitle}
+        \centering\usebeamerfont{subtitle}\Large{Thank you for your attention !}
+    \end{beamercolorbox}
+    \vspace{11pt}
     \begin{beamercolorbox}{subtitle}
         \centering\usebeamerfont{subtitle}\Large{Thank you for your attention !}
     \end{beamercolorbox}
