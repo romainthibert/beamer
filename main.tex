@@ -5,22 +5,17 @@
 \usetheme{lurpa}
 
 % Variables for title and closing slide
-\title{Diagnostic des Cyber-Attaques dans les Systèmes Cyber-Physiques en Utilisant des Réseaux de
-Petri Étiquetés}
-\subtitle{$1^{\mathrm{er}}$ Congrès Annuel de la Sagip}
-\author[R.Thibert]{\textbf{Romain Thibert}, Saïd Amari, Gregory Faraut}
-\date{7 juin 2023}
+\title{Beamer template for scientific presentation}
+\subtitle{Subtitle of the presentation or conference name}
+\author[R.Thibert]{Romain Thibert}
+\date{\today}
 
 % Variable for ToC slides between sections
-\summarytitle{Diagnostic des Cyber-Attaques dans les CPS en utilisant des LPN}
+\summarytitle{Summary title for recap slides}
 
 \begin{document}
 
 \usebeamertemplate{titlepage}
-
-\begin{frame}{Table of Contents}
-\tableofcontents
-\end{frame}
 
 \section{La première section}
 
@@ -45,6 +40,43 @@ Le corps d'une frame
     \end{itemize}
 \end{itemize}
 \end{frame}
+
+\section{Autre section}
+
+\subsection{Blocks}
+
+\begin{frame}{Exemples de blocks}
+    \begin{block}{Ceci est un block classique}
+        Texte du block
+    \end{block}
+    \begin{block}{}
+        Block sans titre
+    \end{block}
+    \begin{alertblock}{Alerted block}
+        Corps du alerted block
+    \end{alertblock}
+\end{frame}
+
+\subsection{Columns}
+
+\begin{frame}{Slide a 2 colonnes}
+    Texte avant les colonnes
+    \begin{columns}
+        \begin{column}{.6\textwidth}
+            Première colonne
+            \begin{block}{Bloc de la première colonne}
+                Texte
+            \end{block}
+        \end{column}
+        \begin{column}{.4\textwidth}
+            Deuxième colonne
+            \begin{block}{Bloc de la deuxième colonne}
+                Texte
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
 
 \usebeamertemplate{endpage}
 
