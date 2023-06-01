@@ -15,12 +15,17 @@
 \defbeamertemplate*{footline}{lurpa}
 {
 \begin{beamercolorbox}[wd=\footlinewd,ht=\footlineht,dp=\footlinedp]{footline}
-    \hfill
     \ifnum\thepage=1
+    \makebox[7em]{}
+    \makebox{\insertshortinstitute}
+    \makebox[3em]{}
+    \makebox{\insertinstitute}
+    \hfill
     \makebox{\insertdate}
     \makebox[25pt]{}
     \else
-    \makebox{\insertdate} 
+    \hfill
+    \makebox{\insertdate}
     \makebox[25pt]{\insertframenumber}
     \fi
 \end{beamercolorbox}
