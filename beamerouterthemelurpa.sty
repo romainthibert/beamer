@@ -42,10 +42,14 @@
 \setbeamertemplate{background}{
     \begin{tikzpicture}
         \fill[white] (0,0) rectangle (\paperwidth,\paperheight);
-        \node[inner sep=0pt] (logo_small) at (0.7,0.35) {\includegraphics[height=0.5cm]{./images/logo_lurpa_petit_format.pdf}};
+        \node[inner sep=0pt] (logo_small) at (0.7,0.35)
+{\includegraphics[height=0.5cm]{./images/logo_lurpa_petit_format.pdf}};
+        \foreach \x in {0,1,2,3}
+            {
+            \fill[slidesecondary] (0,8.85-0.25*\x) rectangle (9mm,8.82-0.25*\x);
+            }
     \end{tikzpicture}
 }
-% }
 
 
 \define@key{beamerframe}{special}[true]{%
